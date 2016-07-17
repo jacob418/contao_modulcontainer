@@ -1,0 +1,11 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+	<ul>
+		<?php foreach($this->moduleList as $key -> $value) : ?>
+			<li><?= $this->{$key} ?></li>
+		<?php endforeach ; ?>
+	</ul>
+
+<?php $this->endblock(); ?>
