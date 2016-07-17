@@ -4,7 +4,7 @@ namespace Contao;
 
 class ModuleContainerModule extends \Module{
 
-	protected $strTemplate = 'mod_containermodule'
+	protected $strTemplate = 'mod_containermodule' ;
 
 	public function generate(){
 		if (TL_MODE == 'BE'){
@@ -18,6 +18,8 @@ class ModuleContainerModule extends \Module{
 			return $objTemplate->parse();
 		}
 
+		$this->containermodule_moduleList = unserialize($this->containermodule_moduleList) ;
+
 		return parent::generate();
 	}
 
@@ -26,17 +28,22 @@ class ModuleContainerModule extends \Module{
 		$arrModules = array() ;
 
 		foreach($this->containermodule_moduleList as $module){
-			$name = $module->name ;
-			$objModule = \ModuleModel::findByPk($module->id) ;
+			$name = $module["name"] ;
+			$objModule = \ModuleModel::findByPk($module["id"]) ;
 
-			if ($objModule !== null)
-			{
+			if($objModule !== null){
 				$objModule->typePrefix = 'ce_' ;
-				$arrModules[$module->name] = $objModule->generate() ;
+				$strClass = \Module::findClass($objModule->type);
+				$objModule = new $strClass($objModule, $this->strColumn);
 			}
 		}
 
-		$objTemplate = new \FrontendTemplate($this->containermodule_container_template) ;
+		$templateName = $this->containermodule_container_template ;
+		if($templateName == ""){
+			$templateName = "container_default" ;
+		}
+
+		$objTemplate = new \FrontendTemplate($templateName) ;
 		$objTemplate->setData($arrModules) ;
 		$objTemplate->moduleList = $this->containermodule_moduleList ;
 		$this->Template->output = $objTemplate->parse() ;

@@ -1,10 +1,9 @@
 <?php $this->extend('block_searchable'); ?>
 
 <?php $this->block('content'); ?>
-
 	<ul>
-		<?php foreach($this->moduleList as $key -> $value) : ?>
-			<li><?= $this->{$key} ?></li>
+		<?php foreach($this->moduleList as $module) : ?>
+			<li><?= $this->{$module["name"]} ?></li>
 		<?php endforeach ; ?>
 	</ul>
 
