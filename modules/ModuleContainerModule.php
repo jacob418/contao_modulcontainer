@@ -35,6 +35,8 @@ class ModuleContainerModule extends \Module{
 				$objModule->typePrefix = 'ce_' ;
 				$strClass = \Module::findClass($objModule->type);
 				$objModule = new $strClass($objModule, $this->strColumn);
+
+				$arrModules[$name] = $objModule->generate() ;
 			}
 		}
 

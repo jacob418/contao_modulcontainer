@@ -17,4 +17,5 @@ TemplateLoader::addFiles(array
 (
 	'mod_containermodule' => 'system/modules/modulcontainer/templates',
 	'container_default'   => 'system/modules/modulcontainer/templates',
+	'container_f-topbar'   => 'system/modules/modulcontainer/templates',
 ));
