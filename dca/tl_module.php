@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['TL_DCA']['tl_module']['palettes']['containermodule']    = '{title_legend},name,headline,type;{config_legend},containermodule_moduleList;{template_legend:hide},container_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['containermodule']    = '{title_legend},name,headline,type;{config_legend},containermodule_moduleList;{template_legend:hide},containermodule_container_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 
@@ -18,6 +18,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['containermodule_moduleList'] = array(
 							'eval'				=>	array(
 									'mandatory'			=>true,
 									'chosen'			=>true
+									'style'			=>	'width:250px'
 								)
 						),
 		            'name' => array(
@@ -49,7 +50,9 @@ class tl_module_containermodule extends Backend{
 	}
 
 	public function getContainerTemplates(){
-		return $this->getTemplateGroup('modulcontainer_');
+		return $this->getTemplateGroup('container_');
+	}
+
 	public function getModules(){
 		$arrModules = array() ;
 		$objModules = $this->Database->execute("SELECT m.id, m.name, t.name AS theme FROM tl_module m LEFT JOIN tl_theme t ON m.pid=t.id ORDER BY t.name, m.name") ;
