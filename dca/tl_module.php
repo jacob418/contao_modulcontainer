@@ -14,7 +14,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['containermodule_moduleList'] = array(
 							'label'				=>	&$GLOBALS['TL_LANG']['tl_content']['module'],
 							'exclude'			=>	true,
 							'inputType'			=>	'select',
-							'options_callback'	=>	array('tl_content', 'getModules'),
+							'options_callback'	=>	array('tl_module_containermodule', 'getModules'),
 							'eval'				=>	array(
 									'mandatory'			=>true,
 									'chosen'			=>true
@@ -50,5 +50,12 @@ class tl_module_containermodule extends Backend{
 
 	public function getContainerTemplates(){
 		return $this->getTemplateGroup('modulcontainer_');
+	public function getModules(){
+		$arrModules = array() ;
+		$objModules = $this->Database->execute("SELECT m.id, m.name, t.name AS theme FROM tl_module m LEFT JOIN tl_theme t ON m.pid=t.id ORDER BY t.name, m.name") ;
+		while ($objModules->next()){
+			$arrModules[$objModules->theme][$objModules->id] = $objModules->name . ' (ID ' . $objModules->id . ')' ;
+		}
+		return $arrModules;
 	}
 }
