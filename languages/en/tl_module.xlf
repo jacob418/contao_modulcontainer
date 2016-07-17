@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="system/modules/news/languages/en/tl_module.php" source-language="en">
+    <body>
+      <trans-unit id="tl_module.containermodule_moduleList.0">
+        <source>Modules</source>
+      </trans-unit>
+      <trans-unit id="tl_module.containermodule_moduleList.1">
+        <source>List, where modules are linked with names. The names can be used in the template to output the linked modules.</source>
+      </trans-unit>
+      <trans-unit id="tl_module.containermodule_name.0">
+        <source>Referenz</source>
+      </trans-unit>
+      <trans-unit id="tl_module.containermodule_name.1">
+        <source>In the container-template the module output is accessed with this name ('<?= $this-><em>name</em> ?>')</source>
+      </trans-unit>
+      <trans-unit id="tl_module.containermodule_container_template.0">
+        <source>Container-template</source>
+      </trans-unit>
+      <trans-unit id="tl_module.containermodule_container_template.1">
+        <source>Template, whitch is used to display the content. Modules can beaccessed like '<?= $this-><em>name</em> ?>'.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
