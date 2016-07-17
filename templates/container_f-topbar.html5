@@ -1,0 +1,19 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="top-bar">
+	<div class="top-bar-title">
+		<?= $this->title ?>
+	</div>
+	<div>
+		<div class="top-bar-left">
+			<?= $this->menu ?>
+		</div>
+		<div class="top-bar-right">
+			<?= $this->search ?>
+		</div>
+	</div>
+</div>
+
+<?php $this->endblock(); ?>
