@@ -6,7 +6,7 @@
 ClassLoader::addClasses(array
 (
 	// Modules
-	'Contao\ModuleContainerModule' => 'system/modules/modulcontainer/modules/ModuleContainerModule.php',
+	'Contao\ModuleContainerModule' => 'system/modules/modulecontainer/modules/ModuleContainerModule.php',
 ));
 
 
@@ -15,7 +15,6 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'mod_containermodule' => 'system/modules/modulcontainer/templates',
-	'container_default'   => 'system/modules/modulcontainer/templates',
-	'container_f-topbar'   => 'system/modules/modulcontainer/templates',
+	'mod_containermodule' => 'system/modules/modulecontainer/templates',
+	'container_default'   => 'system/modules/modulecontainer/templates'
 ));
