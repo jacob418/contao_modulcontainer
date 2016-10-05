@@ -17,7 +17,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['containermodule_moduleList'] = array(
 							'options_callback'	=>	array('tl_module_containermodule', 'getModules'),
 							'eval'				=>	array(
 									'mandatory'			=>true,
-									'chosen'			=>true
+									'chosen'			=>true,
 									'style'			=>	'width:250px'
 								)
 						),
