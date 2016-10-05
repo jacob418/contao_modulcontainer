@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.1">
+  <file datatype="php" original="system/modules/modulcontainer/languages/en/modules.php" source-language="en">
+    <body>
+      <trans-unit id="FMD.containermodule.0" approved="yes">
+        <source>Container-module</source> <target state="translated">Containermodul</target></trans-unit>
+      <trans-unit id="FMD.containermodule.1" approved="yes">
+        <source>Provides a container to display sets of modules. Template overriding needet.</source> <target state="translated">Stellt einen Container zur Verfügung der mehrere Module zu einem zusammenfasst.</target></trans-unit>
+    </body>
+  </file>
+</xliff>
