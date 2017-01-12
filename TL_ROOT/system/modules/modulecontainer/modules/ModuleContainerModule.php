@@ -32,11 +32,7 @@ class ModuleContainerModule extends \Module{
 			$objModule = \ModuleModel::findByPk($module["id"]) ;
 
 			if($objModule !== null){
-				$objModule->typePrefix = 'ce_' ;
-				$strClass = \Module::findClass($objModule->type);
-				$objModule = new $strClass($objModule, $this->strColumn);
-
-				$arrModules[$name] = $objModule->generate() ;
+				$arrModules[$name] = $this->getFrontendModule($objModule, $this->strColumn) ;
 			}
 		}
 
